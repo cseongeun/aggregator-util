@@ -43,7 +43,9 @@ export const verifyJWTToken = (token: string, secret: string): boolean => {
   const signature = parts[2];
 
   // Re-sign and encode the header and payload using the secret
-  const signatureCheck = base64url(CryptoJS.HmacSHA256(header + '.' + payload, secret));
+  const signatureCheck = base64url(
+    CryptoJS.HmacSHA256(header + '.' + payload, secret),
+  );
 
   // Verify that the resulting signature is valid
   return signature === signatureCheck;
@@ -98,19 +100,25 @@ const urlBase64Decode = (str: string): string => {
 const b64DecodeUnicode = (str: any): string => {
   return decodeURIComponent(
     Array.prototype.map
-      .call(b64decode(str), (c: any) => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2))
+      .call(
+        b64decode(str),
+        (c: any) => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2),
+      )
       .join(''),
   );
 };
 
 const b64decode = (str: string): string => {
-  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
+  const chars =
+    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
   let output = '';
 
   str = String(str).replace(/=+$/, '');
 
   if (str.length % 4 === 1) {
-    throw new Error("'atob' failed: The string to be decoded is not correctly encoded.");
+    throw new Error(
+      "'atob' failed: The string to be decoded is not correctly encoded.",
+    );
   }
 
   /* eslint-disable */

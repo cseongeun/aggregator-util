@@ -76,3 +76,5 @@
 //     return abi.filter((props) => props.type === 'event');
 //   }
 // }
+
+export {};

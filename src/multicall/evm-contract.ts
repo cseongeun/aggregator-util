@@ -8,7 +8,11 @@ import { Provider } from '@ethersproject/providers';
  * @returns unknown string
  */
 export function getUnknownString(provider: Provider, multiCallAddress: string) {
-  return new ethers.Contract(multiCallAddress, MULTI_CALL_ABI, provider).UNKNOWN_STRING();
+  return new ethers.Contract(
+    multiCallAddress,
+    MULTI_CALL_ABI,
+    provider,
+  ).UNKNOWN_STRING();
 }
 
 /**
@@ -17,8 +21,15 @@ export function getUnknownString(provider: Provider, multiCallAddress: string) {
  * @param multiCallAddress multicall address
  * @returns unknown uint256
  */
-export function getUnknownUint256(provider: Provider, multiCallAddress: string) {
-  return new ethers.Contract(multiCallAddress, MULTI_CALL_ABI, provider).UNKNOWN_UINT256();
+export function getUnknownUint256(
+  provider: Provider,
+  multiCallAddress: string,
+) {
+  return new ethers.Contract(
+    multiCallAddress,
+    MULTI_CALL_ABI,
+    provider,
+  ).UNKNOWN_UINT256();
 }
 
 /**
@@ -27,8 +38,15 @@ export function getUnknownUint256(provider: Provider, multiCallAddress: string) 
  * @param multiCallAddress multicall address
  * @returns unknown address
  */
-export function getUnknownAddress(provider: Provider, multiCallAddress: string) {
-  return new ethers.Contract(multiCallAddress, MULTI_CALL_ABI, provider).UNKNOWN_ADDRESS();
+export function getUnknownAddress(
+  provider: Provider,
+  multiCallAddress: string,
+) {
+  return new ethers.Contract(
+    multiCallAddress,
+    MULTI_CALL_ABI,
+    provider,
+  ).UNKNOWN_ADDRESS();
 }
 
 /**
@@ -43,10 +61,11 @@ export function getSafeERC20BalanceOf(
   tokenAddress: string,
   userAddress: string,
 ) {
-  return new ethers.Contract(multiCallAddress, MULTI_CALL_ABI, provider).safeERC20BalanceOf(
-    tokenAddress,
-    userAddress,
-  );
+  return new ethers.Contract(
+    multiCallAddress,
+    MULTI_CALL_ABI,
+    provider,
+  ).safeERC20BalanceOf(tokenAddress, userAddress);
 }
 
 /**
@@ -60,9 +79,11 @@ export function getSafeERC20TotalSupply(
   multiCallAddress: string,
   tokenAddress: string,
 ) {
-  return new ethers.Contract(multiCallAddress, MULTI_CALL_ABI, provider).safeERC20TotalSupply(
-    tokenAddress,
-  );
+  return new ethers.Contract(
+    multiCallAddress,
+    MULTI_CALL_ABI,
+    provider,
+  ).safeERC20TotalSupply(tokenAddress);
 }
 
 /**
@@ -76,9 +97,11 @@ export function getSafeERC20TokenInfo(
   multiCallAddress: string,
   tokenAddress: string,
 ) {
-  return new ethers.Contract(multiCallAddress, MULTI_CALL_ABI, provider).getERC20TokenInfos(
-    tokenAddress,
-  );
+  return new ethers.Contract(
+    multiCallAddress,
+    MULTI_CALL_ABI,
+    provider,
+  ).getERC20TokenInfos(tokenAddress);
 }
 
 /**
@@ -93,10 +116,11 @@ export function getBatchERC20TokenBalances(
   userAddresses: string[],
   tokenAddresses: string[],
 ) {
-  return new ethers.Contract(multiCallAddress, MULTI_CALL_ABI, provider).getBatchERC20Balances(
-    userAddresses,
-    tokenAddresses,
-  );
+  return new ethers.Contract(
+    multiCallAddress,
+    MULTI_CALL_ABI,
+    provider,
+  ).getBatchERC20Balances(userAddresses, tokenAddresses);
 }
 
 /**
@@ -110,9 +134,11 @@ export function getBatchERC20TokenInfos(
   multiCallAddress: string,
   tokenAddresses: string[],
 ) {
-  return new ethers.Contract(multiCallAddress, MULTI_CALL_ABI, provider).getBatchERC20Infos(
-    tokenAddresses,
-  );
+  return new ethers.Contract(
+    multiCallAddress,
+    MULTI_CALL_ABI,
+    provider,
+  ).getBatchERC20Infos(tokenAddresses);
 }
 
 /**
@@ -126,9 +152,11 @@ export function getBatchERC20TotalSupply(
   multiCallAddress: string,
   addresses: string[],
 ) {
-  return new ethers.Contract(multiCallAddress, MULTI_CALL_ABI, provider).getBatchERC20TotalSupply(
-    addresses,
-  );
+  return new ethers.Contract(
+    multiCallAddress,
+    MULTI_CALL_ABI,
+    provider,
+  ).getBatchERC20TotalSupply(addresses);
 }
 
 /**
@@ -143,10 +171,11 @@ export function getSafeERC721TokenInfos(
   tokenAddress: string,
   index: number,
 ) {
-  return new ethers.Contract(multiCallAddress, MULTI_CALL_ABI, provider).getSafeERC721Infos(
-    tokenAddress,
-    index,
-  );
+  return new ethers.Contract(
+    multiCallAddress,
+    MULTI_CALL_ABI,
+    provider,
+  ).getSafeERC721Infos(tokenAddress, index);
 }
 
 export function getSafeERC721BalanceOf(
@@ -155,10 +184,11 @@ export function getSafeERC721BalanceOf(
   tokenAddress: string,
   userAddress: string,
 ) {
-  return new ethers.Contract(multiCallAddress, MULTI_CALL_ABI, provider).safeERC721BalanceOf(
-    tokenAddress,
-    userAddress,
-  );
+  return new ethers.Contract(
+    multiCallAddress,
+    MULTI_CALL_ABI,
+    provider,
+  ).safeERC721BalanceOf(tokenAddress, userAddress);
 }
 
 /**
@@ -173,10 +203,11 @@ export function getBatchERC721TokenInfos(
   tokenAddress: string,
   indexes: number[],
 ) {
-  return new ethers.Contract(multiCallAddress, MULTI_CALL_ABI, provider).getBatchERC721Infos(
-    tokenAddress,
-    indexes,
-  );
+  return new ethers.Contract(
+    multiCallAddress,
+    MULTI_CALL_ABI,
+    provider,
+  ).getBatchERC721Infos(tokenAddress, indexes);
 }
 
 /**
@@ -190,9 +221,11 @@ export function getBatchChainLinkData(
   multiCallAddress: string,
   feeds: string[],
 ) {
-  return new ethers.Contract(multiCallAddress, MULTI_CALL_ABI, provider).getBatchChainLinkData(
-    feeds,
-  );
+  return new ethers.Contract(
+    multiCallAddress,
+    MULTI_CALL_ABI,
+    provider,
+  ).getBatchChainLinkData(feeds);
 }
 
 /**
@@ -201,8 +234,16 @@ export function getBatchChainLinkData(
  * @param multiCallAddress multicall address
  * @returns pair info (reserve0, reserve1)
  */
-export function getSafePairInfos(provider: Provider, multiCallAddress: string, pair: string) {
-  return new ethers.Contract(multiCallAddress, MULTI_CALL_ABI, provider).safePairInfo(pair);
+export function getSafePairInfos(
+  provider: Provider,
+  multiCallAddress: string,
+  pair: string,
+) {
+  return new ethers.Contract(
+    multiCallAddress,
+    MULTI_CALL_ABI,
+    provider,
+  ).safePairInfo(pair);
 }
 
 /**
@@ -211,8 +252,16 @@ export function getSafePairInfos(provider: Provider, multiCallAddress: string, p
  * @param multiCallAddress multicall address
  * @returns multiple pair info
  */
-export function getBatchPairInfos(provider: Provider, multiCallAddress: string, pairs: string[]) {
-  return new ethers.Contract(multiCallAddress, MULTI_CALL_ABI, provider).getBatchPairInfos(pairs);
+export function getBatchPairInfos(
+  provider: Provider,
+  multiCallAddress: string,
+  pairs: string[],
+) {
+  return new ethers.Contract(
+    multiCallAddress,
+    MULTI_CALL_ABI,
+    provider,
+  ).getBatchPairInfos(pairs);
 }
 
 /**
@@ -226,7 +275,11 @@ export function getSafeCheckCA(
   multiCallAddress: string,
   targetAddress: string,
 ) {
-  return new ethers.Contract(multiCallAddress, MULTI_CALL_ABI, provider).checkCA(targetAddress);
+  return new ethers.Contract(
+    multiCallAddress,
+    MULTI_CALL_ABI,
+    provider,
+  ).checkCA(targetAddress);
 }
 
 /**
@@ -240,9 +293,11 @@ export function getBatchCheckCA(
   multiCallAddress: string,
   targetAddress: string[],
 ) {
-  return new ethers.Contract(multiCallAddress, MULTI_CALL_ABI, provider).getBatchCheckCA(
-    targetAddress,
-  );
+  return new ethers.Contract(
+    multiCallAddress,
+    MULTI_CALL_ABI,
+    provider,
+  ).getBatchCheckCA(targetAddress);
 }
 
 /**
@@ -257,10 +312,11 @@ export function getBatchStaticAggregator(
   calls: any[][],
   requireSuccess = false,
 ) {
-  return new ethers.Contract(multiCallAddress, MULTI_CALL_ABI, provider).staticAggregate(
-    requireSuccess,
-    calls,
-  );
+  return new ethers.Contract(
+    multiCallAddress,
+    MULTI_CALL_ABI,
+    provider,
+  ).staticAggregate(requireSuccess, calls);
 }
 
 export const MULTI_CALL_ABI = [

@@ -35,3 +35,7 @@ export function checkPassword(
   const plainEncoded = encryptPassword(plainPassword, salt);
   return plainEncoded === encryptedPassword;
 }
+
+export function createHash(algorithm = 'md5', str: string) {
+  return crypto.createHash(algorithm).update(str).digest('hex');
+}
