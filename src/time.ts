@@ -37,3 +37,21 @@ export function getBeforeSpecifiedDay(day: number): string {
   date.setDate(date.getDate() - day);
   return `${date.getFullYear()}/${date.getMonth()}/${date.getDate()}`;
 }
+
+/**
+ * Get Elapsed time (default: ms)
+ * @param start start time (new Date().getTime())
+ * @param unit Unit for s or ms
+ * @returns
+ */
+export function getElapsedTime(start: number, unit = 'ms'): number {
+  const time = new Date().getTime();
+
+  const diffInMS = time - start; // in ms
+  if (unit == 'ms') return diffInMS;
+
+  const diffInS = diffInMS / 1000; // in s
+  if (unit == 's') return diffInS;
+
+  return diffInMS;
+}
