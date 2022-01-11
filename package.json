@@ -1,6 +1,6 @@
 {
   "name": "@seongeun/aggregator-util",
-  "version": "1.0.12",
+  "version": "1.0.22",
   "description": "Aggregator utils",
   "main": "lib/*.js",
   "typings": "lib/*.d.ts",

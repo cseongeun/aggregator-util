@@ -1,10 +1,11 @@
+const _ = '-';
 /**
  * Get Today
  * @returns Today <format: YY/MM/DD>
  */
 export function getToday(): string {
   const date = new Date();
-  return `${date.getFullYear()}/${date.getMonth()}/${date.getDate()}`;
+  return `${date.getFullYear()}${_}${date.getMonth() + 1}${_}${date.getDate()}`;
 }
 
 /**
@@ -14,7 +15,7 @@ export function getToday(): string {
 export function getBeforeADay(): string {
   const date = new Date();
   date.setDate(date.getDate() - 1);
-  return `${date.getFullYear()}/${date.getMonth()}/${date.getDate()}`;
+  return `${date.getFullYear()}${_}${date.getMonth() + 1}${_}${date.getDate()}`;
 }
 
 /**
@@ -24,7 +25,7 @@ export function getBeforeADay(): string {
 export function getBeforeAMonth(): string {
   const date = new Date();
   date.setMonth(date.getMonth() - 1);
-  return `${date.getFullYear()}/${date.getMonth()}/${date.getDate()}`;
+  return `${date.getFullYear()}${_}${date.getMonth() + 1}${_}${date.getDate()}`;
 }
 
 /**
@@ -35,7 +36,7 @@ export function getBeforeAMonth(): string {
 export function getBeforeSpecifiedDay(day: number): string {
   const date = new Date();
   date.setDate(date.getDate() - day);
-  return `${date.getFullYear()}/${date.getMonth()}/${date.getDate()}`;
+  return `${date.getFullYear()}${_}${date.getMonth() + 1}${_}${date.getDate()}`;
 }
 
 /**

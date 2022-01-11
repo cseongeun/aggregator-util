@@ -106,3 +106,12 @@ export function removeNull(array: any[]) {
 export function keyBy(array: any[], key: string) {
   return _.keyBy(array, key);
 }
+
+/**
+ * sort array
+ * @param array target array
+ * @returns sorted array
+ */
+export function sortBy(array: any[]): any[] {
+  return _.sortBy(array);
+}
