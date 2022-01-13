@@ -1,9 +1,19 @@
 import * as _ from 'lodash';
-
-import { ethers, Contract } from 'ethers';
+import { ethers } from 'ethers';
 import { Provider } from '@ethersproject/providers';
 
-export function getStream(provider: Provider, address: string, abi: any) {
+/**
+ * 컨트랙트 이벤트 리시버
+ * @param provider provider
+ * @param address 컨트랙트 주소
+ * @param abi 컨트랙트 ABI
+ * @returns { stream: 이벤트 스트림 }
+ */
+export function getEventStream(
+  provider: Provider,
+  address: string,
+  abi: any,
+): { stream } {
   const contract = new ethers.Contract(address, abi, provider);
 
   const events = abi.filter((props) => props.type === 'event');
@@ -18,7 +28,7 @@ export function getStream(provider: Provider, address: string, abi: any) {
     );
   });
 
-  const on = (callback: any) => {
+  const stream = (callback: any) => {
     contract.on('*', (event) => {
       try {
         const { address, transactionHash, blockNumber } = event;
@@ -28,7 +38,7 @@ export function getStream(provider: Provider, address: string, abi: any) {
         const parseArgs = args.map((arg) => eventArgs[arg].toString());
         const mapArgs = _.zipObject(args, parseArgs);
 
-        const callbackData = {
+        const data = {
           address,
           transactionHash,
           blockNumber,
@@ -36,10 +46,10 @@ export function getStream(provider: Provider, address: string, abi: any) {
           args: mapArgs,
         };
 
-        callback(callbackData);
+        callback(data);
       } catch (e) {}
     });
   };
 
-  return { on };
+  return { stream };
 }
