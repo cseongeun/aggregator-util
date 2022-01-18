@@ -1,6 +1,7 @@
 import * as _ from 'lodash';
 import { ethers } from 'ethers';
 import { Provider } from '@ethersproject/providers';
+import { zipObject } from './array';
 
 /**
  * 컨트랙트 이벤트 리시버
@@ -33,10 +34,10 @@ export function getEventStream(
       try {
         const { address, transactionHash, blockNumber } = event;
         const { name: eventName, args: eventArgs } = iface.parseLog(event);
-        const args = this.abiArgs.get(eventName);
+        const args = abiArgs.get(eventName);
 
         const parseArgs = args.map((arg) => eventArgs[arg].toString());
-        const mapArgs = _.zipObject(args, parseArgs);
+        const mapArgs = zipObject(args, parseArgs);
 
         const data = {
           address,

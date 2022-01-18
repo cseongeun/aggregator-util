@@ -85,7 +85,7 @@ export function isNaN(value: any): boolean {
  */
 export function isJSON(value: any): boolean {
   try {
-    JSON.parse(JSON.stringify(value));
+    JSON.parse(value);
   } catch (e) {
     return false;
   }

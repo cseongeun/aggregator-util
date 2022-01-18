@@ -80,6 +80,16 @@ export function zip(array: any[], otherArray: any[], anotherArray?: any[]) {
 }
 
 /**
+ * zip object
+ * @param array array
+ * @param otherArray other array
+ * @returns zip object
+ */
+export function zipObject(array: any[], otherArray: any[]) {
+  return _.zipObject(array, otherArray);
+}
+
+/**
  * remove falsey value (false, null, 0, "", undefined, NAN)
  * @param array target array
  * @returns removed falsey array
