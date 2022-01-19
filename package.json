@@ -15,6 +15,7 @@
   "license": "MIT",
   "scripts": {
     "build": "rimraf dist && tsc",
+    "publish": "npm run build && npm version patch && npm publish",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint \"src/**/*.ts\"",
     "lint:fix": "eslint \"src/**/*.ts\" --fix"
