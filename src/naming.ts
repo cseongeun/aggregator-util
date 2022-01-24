@@ -3,10 +3,10 @@ export const FARM_ASSET_NAME_IN_FIX = '/';
 export const CHAIN_KEY_IN_FIX = '-';
 
 /**
- * pair symbol naming
+ * 페어 심볼 명
  * @param token0 token0 { symbol }
  * @param token1 token1 { symbol }
- * @returns pair's name
+ * @returns 페어 심볼 명
  */
 export function getPairTokenSymbol(
   token0: { symbol: string },
@@ -16,7 +16,7 @@ export function getPairTokenSymbol(
 }
 
 /**
- * farm asset naming
+ * 팜 자산 명
  * @param stakeTokens stake tokens
  * @param rewardTokens  reward tokens
  * @returns farm asset's name
@@ -31,10 +31,10 @@ export function getFarmAssetName(
 }
 
 /**
- * chain unique key
- * @param chainType type of chain
- * @param chainId  id of chain
- * @returns unique network chain key
+ * 체인 유니크 키
+ * @param chainType 체인 타입
+ * @param chainId  체인 아이디
+ * @returns 유니크한 체인 키
  */
 export function getChainKey(chainType: string, chainId: string): string {
   return `${chainType}${CHAIN_KEY_IN_FIX}${chainId}`;

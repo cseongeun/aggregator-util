@@ -2,10 +2,10 @@ import { ethers } from 'ethers';
 import { Provider } from '@ethersproject/providers';
 
 /**
- * unknown string
- * @param provider node provider
- * @param multiCallAddress multicall address
- * @returns unknown string
+ * 알수없는 문자열
+ * @param provider 노드 프로바이더
+ * @param multiCallAddress 멀티콜 컨트랙트 주소
+ * @returns 알수없는 문자열
  */
 export function getUnknownString(provider: Provider, multiCallAddress: string) {
   return new ethers.Contract(
@@ -16,10 +16,10 @@ export function getUnknownString(provider: Provider, multiCallAddress: string) {
 }
 
 /**
- * unknown uint256
- * @param provider node provider
- * @param multiCallAddress multicall address
- * @returns unknown uint256
+ * 알수없는 Uint256
+ * @param provider 노드 프로바이더
+ * @param multiCallAddress 멀티콜 컨트랙트 주소
+ * @returns 알수없는 Uint256
  */
 export function getUnknownUint256(
   provider: Provider,
@@ -33,10 +33,10 @@ export function getUnknownUint256(
 }
 
 /**
- * unknown address
- * @param provider node provider
- * @param multiCallAddress multicall address
- * @returns unknown address
+ * 알수없는 Address
+ * @param provider 노드 프로바이더
+ * @param multiCallAddress 멀티콜 컨트랙트 주소
+ * @returns 알수없는 Address
  */
 export function getUnknownAddress(
   provider: Provider,
@@ -50,10 +50,10 @@ export function getUnknownAddress(
 }
 
 /**
- * erc20 balanceOf, if error return zero
- * @param provider node provider
- * @param multiCallAddress multicall address
- * @returns erc20 token balance
+ * 단일 ERC20 잔액 조회
+ * @param provider 노드 프로바이더
+ * @param multiCallAddress 멀티콜 컨트랙트 주소
+ * @returns ERC20 잔액
  */
 export function getSafeERC20BalanceOf(
   provider: Provider,
@@ -69,10 +69,10 @@ export function getSafeERC20BalanceOf(
 }
 
 /**
- * erc20 total supply, if error return zero
- * @param provider node provider
- * @param multiCallAddress multicall address
- * @returns erc20 token total supply
+ * 단일 ERC20 총 발행량 조회
+ * @param provider 노드 프로바이더
+ * @param multiCallAddress 멀티콜 컨트랙트
+ * @returns ERC20 총 발행량
  */
 export function getSafeERC20TotalSupply(
   provider: Provider,
@@ -87,10 +87,10 @@ export function getSafeERC20TotalSupply(
 }
 
 /**
- * erc20 token info (name, symbol, decimals)
- * @param provider node provider
- * @param multiCallAddress multicall address
- * @returns erc20 token info
+ * 단일 ERC20 메타데이터 정보 조회
+ * @param provider 노드 프로바이더
+ * @param multiCallAddress 멀티콜 컨트랙트 주소
+ * @returns ERC20 메타데이터 정보 { name, symbol, decimals }
  */
 export function getSafeERC20TokenInfo(
   provider: Provider,
@@ -105,10 +105,10 @@ export function getSafeERC20TokenInfo(
 }
 
 /**
- * multiple erc20 token balance
- * @param provider node provider
- * @param multiCallAddress multicall address
- * @returns multiple erc20 token balance
+ * 다중 ERC20 잔액 조회
+ * @param provider 노드 프로바이더
+ * @param multiCallAddress 멀티콜 컨트랙트 주소
+ * @returns ERC20 잔액들
  */
 export function getBatchERC20TokenBalances(
   provider: Provider,
@@ -124,10 +124,10 @@ export function getBatchERC20TokenBalances(
 }
 
 /**
- * multiple erc20 token info
- * @param provider node provider
- * @param multiCallAddress multicall address
- * @returns multiple erc20 token info
+ * 다중 ERC20 메타데이터 정보 조회
+ * @param provider 노드 프로바이더
+ * @param multiCallAddress 멀티콜 컨트랙트 주소
+ * @returns ERC20 메타데이터 정보들 { name, symbol, decimals }[]
  */
 export function getBatchERC20TokenInfos(
   provider: Provider,
@@ -142,10 +142,10 @@ export function getBatchERC20TokenInfos(
 }
 
 /**
- * multiple erc20 token total supply
- * @param provider node provider
- * @param multiCallAddress multicall address
- * @returns multiple erc20 token total supply
+ * 다중 ERC20 총 발행량 조회
+ * @param provider 노드 프로바이더
+ * @param multiCallAddress 멀티콜 컨트랙트
+ * @returns ERC20 총 발행량들
  */
 export function getBatchERC20TotalSupply(
   provider: Provider,
@@ -160,10 +160,10 @@ export function getBatchERC20TotalSupply(
 }
 
 /**
- * erc721 token info
- * @param provider node provider
- * @param multiCallAddress multicall address
- * @returns erc721 token info (id, tokenURI, owner)
+ * 단일 ERC721의 특정 토큰 Id 정보 조회
+ * @param provider 노드 프로바이더
+ * @param multiCallAddress  멀티콜 컨트랙트 주소
+ * @returns ERC721 특정 Id 정보 { id , tokenURI, owner }
  */
 export function getSafeERC721TokenInfos(
   provider: Provider,
@@ -178,6 +178,14 @@ export function getSafeERC721TokenInfos(
   ).getSafeERC721Infos(tokenAddress, index);
 }
 
+/**
+ * 단일 ERC721의 잔액 조회
+ * @param provider 노드 프로바이더
+ * @param multiCallAddress 멀티콜 컨트랙트 주소
+ * @param tokenAddress 토큰 컨트랙트 주소
+ * @param userAddress 유저 주소
+ * @returns ERC721 잔액
+ */
 export function getSafeERC721BalanceOf(
   provider: Provider,
   multiCallAddress: string,
@@ -192,10 +200,10 @@ export function getSafeERC721BalanceOf(
 }
 
 /**
- * multiple erc721 token info
- * @param provider node provider
- * @param multiCallAddress multicall address
- * @returns erc721 token info (id, tokenURI, owner)
+ * 다중 ERC721의 다중 토큰 Id 정보 조회
+ * @param provider 노드 프로바이더
+ * @param multiCallAddress 멀티콜 컨트랙트 주소
+ * @returns ERC721 다중 토큰 Id 정보  { id, tokenURI, owner }[]
  */
 export function getBatchERC721TokenInfos(
   provider: Provider,
@@ -211,10 +219,11 @@ export function getBatchERC721TokenInfos(
 }
 
 /**
- * multiple chainLink data
- * @param provider node provider
- * @param multiCallAddress multicall address
- * @returns multiple chainLick data (decimal, feed, answer)
+ * 다중 체인링크 가격 데이터
+ * @param provider 노드 프로바이더
+ * @param multiCallAddress 멀티콜 컨트랙트 주소
+ * @param feeds 체인링크 가격 데이터 피드
+ * @returns 체인링크 데이터 피드 { decimal, feed, answer }[]
  */
 export function getBatchChainLinkData(
   provider: Provider,
@@ -229,10 +238,10 @@ export function getBatchChainLinkData(
 }
 
 /**
- * pair info
- * @param provider node provider
- * @param multiCallAddress multicall address
- * @returns pair info (reserve0, reserve1)
+ * 단일 페어 정보
+ * @param provider 노드 프로바이더
+ * @param multiCallAddress 멀티콜 컨트랙트 주소
+ * @returns Pair 정보  { reserve0, reserve1 }
  */
 export function getSafePairInfos(
   provider: Provider,
@@ -247,10 +256,10 @@ export function getSafePairInfos(
 }
 
 /**
- * multiple pair info
- * @param provider node provider
- * @param multiCallAddress multicall address
- * @returns multiple pair info
+ * 다중 페어 정보
+ * @param provider 노드 프로바이더
+ * @param multiCallAddress 멀티콜 컨트랙트 주소
+ * @returns Pair 정보들 { reserve0, reserve1 }[]
  */
 export function getBatchPairInfos(
   provider: Provider,
@@ -265,16 +274,16 @@ export function getBatchPairInfos(
 }
 
 /**
- * check is CA
- * @param provider node provider
- * @param multiCallAddress multicall address
- * @returns is ca (boolean)
+ * 단일 주소의 CA 여부 조회
+ * @param provider 노드 프로바이더
+ * @param multiCallAddress 멀티콜 컨트랙트 주소
+ * @returns CA 여부
  */
 export function getSafeCheckCA(
   provider: Provider,
   multiCallAddress: string,
   targetAddress: string,
-) {
+): Promise<boolean> {
   return new ethers.Contract(
     multiCallAddress,
     MULTI_CALL_ABI,
@@ -283,16 +292,16 @@ export function getSafeCheckCA(
 }
 
 /**
- * multiple check ca
- * @param provider node provider
- * @param multiCallAddress multicall address
- * @returns multiple check ca
+ * 다중 주소의 CA 여부 조회
+ * @param provider 노드 프로바이더
+ * @param multiCallAddress  멀티콜 컨트랙트 주소
+ * @returns CA 여부들
  */
 export function getBatchCheckCA(
   provider: Provider,
   multiCallAddress: string,
   targetAddress: string[],
-) {
+): Promise<boolean[]> {
   return new ethers.Contract(
     multiCallAddress,
     MULTI_CALL_ABI,
@@ -301,10 +310,12 @@ export function getBatchCheckCA(
 }
 
 /**
- * static call
- * @param provider node provider
- * @param multiCallAddress multicall address
- * @returns static call result
+ * 다중 정적 호출
+ * @param provider 노드 프로바이더
+ * @param multiCallAddress 멀티콜 컨트랙트 주소
+ * @param calls 콜 데이터들
+ * @param requireSuccess 필수 성공 여부
+ * @returns 정적 호출
  */
 export function getBatchStaticAggregator(
   provider: Provider,
@@ -319,6 +330,7 @@ export function getBatchStaticAggregator(
   ).staticAggregate(requireSuccess, calls);
 }
 
+// 멀티콜 컨트랙트 ABI
 export const MULTI_CALL_ABI = [
   {
     inputs: [],

@@ -1,3 +1,4 @@
+// ERC20 ABI
 export const ERC20_ABI = [
   {
     constant: true,

@@ -3,18 +3,18 @@ import { getCreate2Address } from '@ethersproject/address';
 import { keccak256, pack } from '@ethersproject/solidity';
 
 /**
- * to Checksum Address
- * @param address address
- * @returns checkSum address
+ * 체크섬 주소로 변환
+ * @param address 주소
+ * @returns 체크섬 주소
  */
 export function toCheckSumAddress(address: string): string {
   return ethers.utils.getAddress(address);
 }
 
 /**
- * check address validation
- * @param address address
- * @returns boolean
+ * 주소 유효성 검증
+ * @param address 주소
+ * @returns 유효성 여부
  */
 export function isAddress(address: string): boolean {
   try {
@@ -26,21 +26,21 @@ export function isAddress(address: string): boolean {
 }
 
 /**
- * check is zero address
- * @param address address
- * @returns boolean
+ * 제로 주소 여부 조회
+ * @param address 주소
+ * @returns 제로 주소
  */
 export function isZeroAddress(address: string): boolean {
   return address === ethers.constants.AddressZero;
 }
 
 /**
- * compute pair
- * @param factoryAddress pair factory
- * @param factoryInitHash pair factory init hash
- * @param token0Address  token0 address
- * @param token1Address  token1 address
- * @returns pair address
+ * 페어 주소 계산
+ * @param factoryAddress 페어 생성 팩토리
+ * @param factoryInitHash 팩토리 초기화 해시
+ * @param token0Address  토큰 0 주소
+ * @param token1Address  토큰 1 주소
+ * @returns 페어 주소
  */
 export function computePairAddress(
   factoryAddress: string,

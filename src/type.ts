@@ -145,6 +145,11 @@ export function isCronString(value: any): boolean {
   }
 }
 
+/**
+ * is Empty
+ * @param object object
+ * @returns boolean
+ */
 export function isEmpty(object: any): boolean {
   return Object.keys(object).length === 0;
 }

@@ -1,36 +1,36 @@
 import { ethers, BigNumber } from 'ethers';
 
 /**
- * adjust commify
- * @param amount value
- * @returns commified value
+ * 수량 콤마 적용
+ * @param amount 수량
+ * @returns 콤마 적용된 문자열
  */
 export function toCommify(amount: any): string {
   return ethers.utils.commify(amount.toString());
 }
 
 /**
- * bytes32 to string
- * @param bytes32  bytes32
- * @returns  string
+ * Bytes32 => String
+ * @param bytes32  Bytes32
+ * @returns String
  */
 export function bytes32ToString(bytes32: string): string {
   return ethers.utils.parseBytes32String(bytes32);
 }
 
 /**
- * string to bytes32
- * @param string  string
- * @returns  bytes32
+ * String => Bytes32
+ * @param string  String
+ * @returns Bytes32
  */
 export function stringToBytes32(string: string): string {
   return ethers.utils.formatBytes32String(string);
 }
 
 /**
- * to hex string
- * @param value  value
- * @returns hex string
+ * Hex 문자열로 변환
+ * @param value  값
+ * @returns Hex 문자열
  */
 export function toHexString(value: any): string {
   return ethers.utils.hexStripZeros(BigNumber.from(value).toHexString());
